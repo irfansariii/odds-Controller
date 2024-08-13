@@ -26,6 +26,13 @@ import { getReferenceMarketsRoute } from '../LOGIC/getReferenceMarkets';
 import { getResultRoute } from '../LOGIC/getResult';
 import { insertOddsRoute } from '../LOGIC/insertOdds';
 import { insertResultRoute } from '../LOGIC/insertResult';
+import { saveCustomMarketWithManualEntryRoute } from '../LOGIC/saveCustomMarketWithManualEntry';
+import { sendOddsToPubsubRoute } from '../LOGIC/sendOddsToPubsub';
+import { updateBookmakerFancyMarketRoute } from '../LOGIC/updateBookmakerFancyMarket';
+import { updateFancyBookmakerMarketTimerRoute } from '../LOGIC/updateFancyBookmakerMarketTimer';
+import { updateFeederMemberRoute } from '../LOGIC/updateFeederMember';
+import { updateMarketDataRoute } from '../LOGIC/updateMarketData';
+import { updateCustomMarketRoute } from '../LOGIC/updateCustomMarket';
 
 
 const feederRouter:express.Router = express.Router();
@@ -58,5 +65,12 @@ feederRouter.post('/getReferenceMarkets', getReferenceMarketsRoute)
 feederRouter.post('/getResult', getResultRoute)              
 feederRouter.post('/insertOddsRoute', insertOddsRoute)           
 feederRouter.post('/insertResult', insertResultRoute)        
-feederRouter.post('/saveCustomMarketWithManualEntry', saveCustomMarketWithManualEntryRoute) 
+feederRouter.post('/saveCustomMarketWithManualEntry', saveCustomMarketWithManualEntryRoute)        
+feederRouter.post('/sendOddsToPubsub', sendOddsToPubsubRoute)     
+feederRouter.get('/updateBookmakerFancyMarket', updateBookmakerFancyMarketRoute)    
+feederRouter.post('/updateCustomMarket', updateCustomMarketRoute)
+feederRouter.post('/updateFancyBookmakerMarketTimer', updateFancyBookmakerMarketTimerRoute)      
+feederRouter.post('/updateFeederMember', updateFeederMemberRoute)
+feederRouter.post('/updateMarketData', updateMarketDataRoute)
+
 export default feederRouter
